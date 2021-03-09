@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+</head>
+<body>
+<!-- 3-2 要素内のテキストの操作（jQueryのメソッド） -->
+<div id="title"><h1>Hello World!</h1></div>
+<input type="text" id="form" value="hello" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function () {
+console.log($("#title").text());
+console.log($("#title").html());
+// $("#title").text("こんにちは！");
+// $("#title").html("こんにちは！");
+// $("#title").text("<h1>こんにちは！</h1>");
+$("#title").html("<h1>こんにちは！</h1>");
+// console.log($("#form").val());
+// console.log($("#form").val("Hello World!"));
+$("#form").val("Hello World!");
+});
+</script>
+</body>
+</html>

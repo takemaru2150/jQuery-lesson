@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+</head>
+<body>
+<div id="div1">
+<h1 id="title">タイトル</h1>
+<p class="element">要素1</p>
+<ul>
+<li>リスト1</li>
+<li>リスト2</li>
+<li>リスト3</li>
+</ul>
+</div>
+
+<div id="div2">
+<h1>2-2 階層セレクタで要素を絞り込む（jQueryのセレクタ）</h1>
+<ul>
+<li class="list1">リスト1</li>
+<li class="list2">リスト2</li>
+<li>リスト3</li>
+</ul>
+</div>
+
+<!-- 2-4 属性フィルタで要素を絞り込む（jQueryのセレクタ） -->
+<div id="div3">
+<h1>2-4 属性フィルタで要素を絞り込む（jQueryのセレクタ）</h1>
+<a href="https://www.google.co.jp/">Google</a>
+<a href="https://www.yahoo.co.jp/" target="_blank" rel="noopener noreferrer"
+>Yahoo</a
+>
+<a href="https://www.bing.com/" target="_self">Bing</a>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+// 1-3 jQueryの基本（DOMの操作）（はじめてのjQuery）
+
+// $(document).ready(function () {
+// $("#title").text("タイトル変更");
+// });
+
+$(function () {
+$("#title").text("タイトル変更");
+});
+
+// 2-1 セレクタの基本（jQueryのセレクタ）
+$(function () {
+// タグ名
+$("#div1 li").css("color", "red");
+// ID
+$("#title").css("color", "blue");
+// クラス名
+$(".element").css("color", "green");
+});
+
+// 2-2 階層セレクタで要素を絞り込む（jQueryのセレクタ）
+$(function () {
+// + ある要素の次の要素
+$("#div2 .list1 + li").css("color", "red");
+
+// ~ ある要素以降の擁護
+$("#div2 .list1 ~ li").css("background", "#999");
+});
+
+// 2-4 属性フィルタで要素を絞り込む（jQueryのセレクタ）
+$(function () {
+$("a[target]").css("color", "red");
+$("a[target='_blank']").css("color", "green");
+$("a[href*='co.jp']").css("color", "pink"); // 部分一致
+$("a[href*='co.jp'][target]").css("color", "blue"); // 複数条件
+});
+
+// 3-1 メソッドを使った要素指定（jQueryのメソッド）
+</script>
+</body>
+</html>
+　
