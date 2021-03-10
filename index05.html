@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<style>
+.parent-item {
+background-color: red;
+width: 200px;
+height: 200px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.child-item {
+background-color: blue;
+width: 50%;
+height: 50%;
+}
+</style>
+</head>
+<body>
+<!-- 4-1 要素の表示、非表示（jQueryのエフェクト） -->
+<h1>要素の表示、非表示</h1>
+<div id="rect" style="width: 100px; height: 100px; background-color: red"></div>
+
+<div id="parent" class="parent-item">
+<div id="child" class="child-item"></div>
+</div>
+
+<a href="https://www.google.co.jp/" target="_blank" onClick="return func1()"
+>Googleを新しいタブで開く？</a
+>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function () {
+// $("#rect").hide(1000);
+
+$("#rect").click(function () {
+// $(this).hide(600);
+// $(this).show(300);
+$(this).toggle(300); // 勝手にやってくれる
+$(this).toggle(300);
+return false;
+});
+});
+
+// https://freelance-jak.com/technology/javascript/1140/
+// 生のJavaScript　伝播を止める
+document.getElementById("parent").onclick = function (e) {
+alert("親");
+};
+document.getElementById("child").onclick = function (e) {
+alert("子");
+e.stopPropagation();
+};
+
+function func1() {
+alert("Googleは開かせないよ");
+return false;
+}
+</script>
+</body>
+</html>
