@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+</head>
+<body>
+<!-- 5-3 submitイベント（jQueryのイベント） -->
+<h1>5-3 submitイベント（jQueryのイベント）</h1>
+<form action="" method="post" target="_blank">
+<input type="text" name="" id="text_input" value="hello" />
+<input type="submit" value="送信" />
+</form>
+
+<span id="result"></span>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function () {
+$("form").submit(function (e) {
+if (confirm("送信しますか？")) {
+// OKボタン
+var text = $("#text_input").val();
+if (text == "") {
+// 送信キャンセル
+e.preventDefault();
+// return false;
+console.log("送信キャンセルされました");
+} else {
+// 送信
+console.log("送信されました");
+console.log(text);
+}
+} else {
+// キャンセルボタン
+e.preventDefault(); // デフォルト　防ぐ
+// e.stopPropagation();
+// return false;
+console.log("送信キャンセルされました");
+}
+});
+});
+</script>
+</body>
+</html>
