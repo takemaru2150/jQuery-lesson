@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+</head>
+<body>
+<!-- 3-3 要素の挿入、置換、削除（jQueryのメソッド） -->
+<h1>タイトル</h1>
+<div>
+<p>段落1</p>
+<p>段落2</p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function () {
+// 対象の末尾に挿入
+// $("p").append("(変更)");
+
+// 対象の先頭に挿入
+// $("p").prepend("■");
+
+// 対象の前に挿入
+// $("p:eq(0)").before("<p>段落0</p>");
+
+// 対象の後ろに挿入
+// $("p:eq(0)").after("<p>段落0</p>");
+
+// 対象の要素を置換
+// $("h1").replaceWith("<p>こんにちは！</p>");
+
+// 対象の要素の子要素を削除
+// $("div").empty();
+
+// 対象の要素と子要素を削除
+$("div").remove();
+});
+</script>
+</body>
+</html>
