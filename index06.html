@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+</head>
+<body>
+<!-- 4-2 スライドとフェード（jQueryのエフェクト） -->
+<h1>要素の表示、非表示</h1>
+<div id="rect" style="width: 100px; height: 100px; background-color: red"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function () {
+// 縦方向に表示、非表示
+// $("#rect").slideUp(1000);
+// $("#rect").slideDown(1000);
+// $("#rect").slideToggle(1000); //勝手にやってくれる
+
+// 透明度
+// $("#rect").fadeOut(1000);
+// $("#rect").fadeIn(1000);
+// $("#rect").fadeToggle(1000);
+$("#rect").fadeTo(1000, 0.5); //最終的な透明度を指定できる
+});
+</script>
+</body>
+</html>
