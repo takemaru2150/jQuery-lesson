@@ -52,13 +52,19 @@ $("#title").text("タイトル変更");
 $(function () {
 // タグ名
 // $("#div1 li").css("color", "red");
+
 // ID
 $("#title").css("color", "blue");
 // クラス名
 $(".element").css("color", "green");
 
-// 別の記法
-$("#div1 li").css({ color: "red" });
+// 別の記法 cssを繋げて書く場合
+// $("#div1 li").css({ color: "red" });
+$("#div1 li").css({
+color: "red",
+background: "blue",
+"font-weight": "bold",
+});
 });
 
 // 2-2 階層セレクタで要素を絞り込む（jQueryのセレクタ）
